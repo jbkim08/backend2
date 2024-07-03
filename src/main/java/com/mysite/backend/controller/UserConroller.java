@@ -17,8 +17,8 @@ public class UserConroller {
 
     //새 유저 생성 localhost:8080/api/users 포스트
     @PostMapping("/users")
-    User addUser(@RequestBody User user) {
-        return userRepository.save(user);
+    User addUser(@RequestBody User newUser) {
+        return userRepository.save(newUser);
     }
 
 }
