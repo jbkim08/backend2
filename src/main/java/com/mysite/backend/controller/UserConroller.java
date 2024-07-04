@@ -45,4 +45,14 @@ public class UserConroller {
                 }).orElseThrow(() -> new UserNotFoundException(id));
     }
 
+    //유저 삭제 delete
+    @DeleteMapping("/user/{id}")
+    String deleteUser(@PathVariable Long id){
+        if(!userRepository.existsById(id)){
+            throw new UserNotFoundException(id);
+        }
+        userRepository.deleteById(id);
+        return  "유저 아이디: "+id+"는 삭제 되었습니다";
+    }
+
 }
