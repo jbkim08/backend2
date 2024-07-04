@@ -46,7 +46,7 @@ public class UserConroller {
     }
 
     //유저 삭제 delete
-    @DeleteMapping("/user/{id}")
+    @DeleteMapping("/users/{id}")
     String deleteUser(@PathVariable Long id){
         if(!userRepository.existsById(id)){
             throw new UserNotFoundException(id);
